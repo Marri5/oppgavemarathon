@@ -1,16 +1,6 @@
 const express = require('express');
 const app = express();
 const apiRoutes = require('./routes/api');
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://10.12.3.252:27017/oppgavemarathon', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log('Connected to MongoDB');
-}).catch(err => {
-    console.error('Error connecting to MongoDB:', err.message);
-});
 
 app.set('view engine', 'ejs');
 
