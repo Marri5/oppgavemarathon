@@ -1,0 +1,8 @@
+<%- include('partials/head') %>
+<h1>Greetings from MongoDB</h1>
+<ul>
+    <% greetings.forEach(greeting => { %>
+        <li><%= greeting.message %></li>
+    <% }); %>
+</ul>
+<%- include('partials/foot') %>

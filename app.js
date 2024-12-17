@@ -1,7 +1,7 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const apiRoutes = require('./routes/api');
-const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://10.12.3.252:27017/oppgavemarathon', {
     useNewUrlParser: true,
@@ -10,9 +10,7 @@ mongoose.connect('mongodb://10.12.3.252:27017/oppgavemarathon', {
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
-
 app.set('view engine', 'ejs');
-
 app.set('views', './views');
 
 app.use(express.json());
