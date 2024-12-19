@@ -4,7 +4,7 @@ const app = express();
 const apiRoutes = require('./routes/api');
 
 // MongoDB Connection
-mongoose.connect('mongodb://10.12.[pool].252:27017/oppgavemarathon', {
+mongoose.connect('mongodb://10.12.3.252:27017/oppgavemarathon', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
