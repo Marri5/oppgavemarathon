@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User.js');
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -36,6 +35,10 @@ router.post('/register', async (req, res) => {
         console.error(error);
         res.status(500).send('An error occurred');
     }
+});
+
+router.get('/galleri', (req, res) => {
+    res.render('gallery');
 });
 
 module.exports = router;
