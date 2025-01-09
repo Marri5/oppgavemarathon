@@ -24,7 +24,7 @@ app.use(express.static('public'));
 app.use('/', apiRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://10.12.3.250:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
