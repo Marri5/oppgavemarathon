@@ -1,17 +1,11 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const helloController = require("../controllers/helloController");
-const indexController = require('../controllers/indexController');
-const mongoController = require('../controllers/mongoController');
-const User = require('../models/User');
+const User = require('../models/User.js');
 
-router.get('/index', indexController.renderIndex);
+router.get('/', (req, res) => {
+    res.render('index');
+});
 
-router.get("/helloworld", helloController.proxyToNginx);
-
-router.get('/mongo-world', mongoController.renderMongoWorld);
-
-// Login Route
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -28,7 +22,6 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// Registration Route
 router.post('/register', async (req, res) => {
     const { username, password } = req.body;
     try {
